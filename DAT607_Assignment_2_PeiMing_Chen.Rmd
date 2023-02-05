@@ -1,0 +1,52 @@
+---
+title: "DATA607_Assignment_2"
+author: "PeiMing_Chen"
+date: "`r Sys.Date()`"
+output: pdf_document
+---
+
+```{r}
+library(tidyverse)
+```
+
+### Introduction
+A database of a CSV file that established in MySQL Workbench was loaded into Rstudio. I collected six movies reviews from five of my friends. Through R, I did some rating analysis and data cleaning of this database.  
+
+```{r}
+Ratingsdata <- data.frame(read.csv("https://raw.githubusercontent.com/PMCformosa/DATA607_Assignment2/main/DATA607_WeeK_2_SQL_CSV.csv", header = TRUE))
+
+head(Ratingsdata)
+```
+
+### Average rating of each movie from five of my friends
+Null values were filtered out from Ratings 
+```{r}
+avgerage_Ratings <- Ratingsdata %>%
+  group_by(MovieName) %>%
+  filter(Ratings != "NULL") %>%
+  summarise(avg= mean(as.integer(Ratings)))
+avgerage_Ratings
+```
+
+From this bar plot we can easily tell that "MEGAN" has the highest rating among the six movies currently showing in theaters. 
+```{r}
+library(ggplot2)
+ggplot(data=avgerage_Ratings, aes(x=avg, y=MovieName , fill=MovieName)) + 
+  geom_bar(stat="identity")
+```
+
+Visualization of how these five friends rate these six movies is shown in the plot below. Null value of each reviewer is replaced by rating= 0 in each plot. 
+
+```{r}
+library(ggplot2)
+data_01 = Ratingsdata
+data_01[,4][data_01[,4] == "NULL"] <- 0
+ggplot(data=data_01, aes(x=MovieName, y = Ratings, fill = MovieName, label = Ratings))+
+    geom_bar(stat="identity")+ 
+    facet_wrap(~FirstName)+
+    ggtitle("Movie Ratings by each Friend")+
+    theme(axis.text.x = element_blank(),plot.title = element_text(hjust=0.5),legend.position = "right")
+```
+
+
+
