@@ -1,0 +1,31 @@
+Friends,FirstName,MovieName,Ratings
+1,Jenny,Avatar,4
+1,Jenny,PLANE,NULL
+1,Jenny,"80 FOR BRADY",5
+1,Jenny,"A MAN CALLED OTOO",NULL
+1,Jenny,MEGAN,5
+1,Jenny,"The Whale",3
+2,Mike,Avatar,5
+2,Mike,PLANE,3
+2,Mike,"80 FOR BRADY",NULL
+2,Mike,"A MAN CALLED OTOO",4
+2,Mike,MEGAN,4
+2,Mike,"The Whale",NULL
+3,OLIVER,Avatar,4
+3,OLIVER,PLANE,3
+3,OLIVER,"80 FOR BRADY",2
+3,OLIVER,"A MAN CALLED OTOO",NULL
+3,OLIVER,MEGAN,5
+3,OLIVER,"The Whale",3
+4,Carol,Avatar,5
+4,Carol,PLANE,NULL
+4,Carol,"80 FOR BRADY",4
+4,Carol,"A MAN CALLED OTOO",NULL
+4,Carol,MEGAN,5
+4,Carol,"The Whale",3
+5,Nick,Avatar,4
+5,Nick,PLANE,2
+5,Nick,"80 FOR BRADY",1
+5,Nick,"A MAN CALLED OTOO",2
+5,Nick,MEGAN,4
+5,Nick,"The Whale",NULL
